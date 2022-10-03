@@ -20,8 +20,9 @@ public class JogoDaVelha {
         char[][] tabuleiro = new char[3][3];
 
         int continuaJogando = 1;
-        while (continuaJogando == 1) {  //loop para jogar novamente
 
+        //loop para jogar novamente
+        while (continuaJogando == 1) {
             int jogadas = 1;
             int vencedor = 0;
             inciaTabuleiro(tabuleiro);
@@ -38,8 +39,8 @@ public class JogoDaVelha {
                     System.out.println("\nJogador " + jogador2 + " escolha uma posição de 1 a 9 para marcar o O: ");
                 }
                 char jogada = scanner.next().charAt(0);
-                //tratar o erro se escolher uma posicao que já foi escolhida ou que não existe
 
+                //tratar o erro se escolher uma posicao que já foi escolhida ou que não existe
                 switch (jogada) {
                     case '1':
                         tabuleiro[0][0] = simbolo;
@@ -137,17 +138,21 @@ public class JogoDaVelha {
 
     public static int verificaVencedor(char[][] tabuleiro) {
 
+        //verificando linhas
         String linha1 = "" + tabuleiro[0][0] + tabuleiro[0][1] + tabuleiro[0][2];
         String linha2 = "" + tabuleiro[1][0] + tabuleiro[1][1] + tabuleiro[1][2];
         String linha3 = "" + tabuleiro[2][0] + tabuleiro[2][1] + tabuleiro[2][2];
 
+        //verificando colunas
         String coluna1 = "" + tabuleiro[0][0] + tabuleiro[1][0] + tabuleiro[2][0];
         String coluna2 = "" + tabuleiro[0][1] + tabuleiro[1][1] + tabuleiro[2][1];
         String coluna3 = "" + tabuleiro[0][2] + tabuleiro[1][2] + tabuleiro[2][2];
 
+        //verificando diagonais
         String diagonal1 = "" + tabuleiro[0][0] + tabuleiro[1][1] + tabuleiro[2][2];
         String diagonal2 = "" + tabuleiro[0][2] + tabuleiro[1][1] + tabuleiro[2][0];
 
+        //verificação de vencedor ou empate
         if (linha1.equals("XXX") || linha2.equals("XXX") || linha3.equals("XXX") ||
                 coluna1.equals("XXX") || coluna2.equals("XXX") || coluna3.equals("XXX") ||
                 diagonal1.equals("XXX") || diagonal2.equals("XXX")) {
