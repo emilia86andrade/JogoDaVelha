@@ -17,4 +17,6 @@ public class JogoDaVelha {
         scanner.close();
 
         System.out.println(jogador1 + " escolha a posição");
+
+//        System.out.println("teste");
 }
