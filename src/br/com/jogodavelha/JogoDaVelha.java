@@ -10,7 +10,7 @@ public class JogoDaVelha {
         System.out.println(" Objetivo: Vence o jogador que conseguir formar primeiro \n uma linha com três " +
                 "símbolos iguais, seja ela na horizontal, \n vertical ou diagonal.\n");
         System.out.println(" Regra: Jogador, durante a sua vez, escolha apenas uma posição \n que está escrita " +
-                "na tela, caso contrário o jogo será encerrado.\n");
+                "na tela.\n");
 
         System.out.println("Jogador X digite seu nome: ");
         Scanner scanner = new Scanner(System.in);
@@ -163,6 +163,11 @@ public class JogoDaVelha {
             mostraTabuleiro(tabuleiro);
 
             System.out.println("\nFim da partida.\n");
+
+            System.out.println("****** PLACAR PARCIAL ******");
+            System.out.printf("Jogador X %s - %d vitórias\n", jogador1, vitoriasJogador1);
+            System.out.printf("Jogador O %s - %d vitórias\n", jogador2, vitoriasJogador2);
+
             System.out.println("Deseja jogar novamente ? - Digite 1 para continuar ou 0 para encerrar o jogo");
             try {
                 continuaJogando = scanner.nextInt();
@@ -170,7 +175,7 @@ public class JogoDaVelha {
                     System.out.println("Opção inválida, o jogo será encerrado!");
                 }
             } catch (InputMismatchException e) {
-                System.err.println("Opção Incorreta! - " + e.getMessage());
+                System.err.println("Opção Incorreta! - "+e.getMessage());
                 System.out.println("O jogo será encerrado!");
                 continuaJogando = 0;
             }
@@ -256,3 +261,4 @@ public class JogoDaVelha {
         return 0;
     }
 }
+
